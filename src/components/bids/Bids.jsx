@@ -22,10 +22,10 @@ const Bids = ({ title, nfts, loadingState }) => {
         </div>
         <div className="bids-container-card">
           {nfts.map((nft, i) => (
-            <div className="card-column">
+            <div className="">
               <div className="bids-card">
                 <div className="bids-card-top">
-                  <img src={bids8} alt="" />
+                  <img src={nft.image} alt="" />
                   <Link to={`/post/123`}>
                     <p className="bids-title">Blue Red Art</p>
                   </Link>
