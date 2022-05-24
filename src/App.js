@@ -2,6 +2,8 @@ import './App.css'
 import { Navbar, Footer } from './components'
 import { Home, Profile, Item, Create, Login, Register } from './pages'
 import { Routes, Route } from 'react-router-dom'
+import MyItems from './pages/myitems/MyItems'
+import MyCreations from './pages/myCreations/MyCreations'
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path=":item/:id" element={<Item />} />
+        <Route path="/myitems" element={<MyItems />} />
+        <Route path="/mycreations" element={<MyCreations />} />
         <Route path="/create" element={<Create />} />
         <Route path="/profile/:id" element={<Profile />} />
         <Route path="/login" element={<Login />} />

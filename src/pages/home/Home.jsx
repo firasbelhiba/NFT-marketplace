@@ -76,7 +76,12 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Bids loadingState={loadingState} nfts={nfts} title="Hot Bids" />
+      <Bids
+        buyNft={buyNft}
+        loadingState={loadingState}
+        nfts={nfts}
+        title="Hot Bids"
+      />
     </div>
   )
 }

@@ -7,7 +7,7 @@ import {  Link } from "react-router-dom";
 const Menu = () => (
   <>
      <Link to="/"><p>Explore</p> </Link>
-     <p>My Items</p>
+     <Link to="/items"><p>My items</p> </Link>
     
   </>
  )
