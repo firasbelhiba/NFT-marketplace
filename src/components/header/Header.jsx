@@ -66,7 +66,7 @@ const Header = () => {
     <div className="header section__padding">
       <div className="header-content">
         <div>
-          <h1>Discover, collect, and sell extraordinary NFTs</h1>
+          <h1>Découvrez, collectez et vendez des NFT extraordinaires</h1>
           <img className="shake-vertical" src={coin} alt="" />
         </div>
       </div>

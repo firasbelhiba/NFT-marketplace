@@ -84,11 +84,6 @@ const MyCreations = () => {
                     {' '}
                     <AiFillHeart /> 66
                   </p> */}
-                <p>
-                  <div className="load-more">
-                    <button>Buy</button>
-                  </div>
-                </p>
               </div>
             </div>
           </div>

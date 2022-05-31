@@ -80,7 +80,7 @@ const Home = () => {
         buyNft={buyNft}
         loadingState={loadingState}
         nfts={nfts}
-        title="Hot Bids"
+        title="Acceuil"
       />
     </div>
   )

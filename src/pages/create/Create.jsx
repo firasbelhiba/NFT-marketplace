@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { ethers } from 'ethers'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import Web3Modal from 'web3modal'
-import bids8 from '../../assets/bids8.png'
 
 import { nftAddress, nftMarketAddress } from '../../config'
 
@@ -15,7 +14,7 @@ import Market from '../../artifacts/contracts/NFTMarket.sol/NFTMarket.json'
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0')
 
 const Create = () => {
-  const [fileUrl, setFileUrl] = useState('assets/img/icons/upload.svg')
+  const [fileUrl, setFileUrl] = useState(Image)
   const [formInput, updateFormInput] = useState({
     price: '',
     name: '',
@@ -24,6 +23,7 @@ const Create = () => {
 
   async function onChange(e) {
     const file = e.target.files[0]
+
     try {
       const added = await client.add(file, {
         progress: (p) => console.log(`Received: ${p}`),
@@ -84,16 +84,16 @@ const Create = () => {
   return (
     <div className="create section__padding">
       <div className="create-container">
-        <h1>Create new Item</h1>
-        <p className="upload-file">Upload File</p>
+        <h1>Créer une nouvelle piéce d'art</h1>
+        <p className="upload-file">Uploader un fichier</p>
         <div className="upload-img-show">
-          <h3>JPG, PNG, GIF, SVG, WEBM, MP3, MP4. Max 100mb.</h3>
-          <img src={Image} alt="banner" />
-          <p>Drag and Drop File</p>
+          <h3>JPG, PNG, GIF, SVG, WEBM, MP4. Max 100mb.</h3>
+          <img src={fileUrl} alt="banner" width="300px" height="300px" />
+          <p>Glisser-déposer le fichier</p>
         </div>
         <form className="writeForm" autoComplete="off">
           <div className="formGroup">
-            <label>Upload</label>
+            <label>Uploader</label>
             <input
               type="file"
               className="custom-file-input"
@@ -101,7 +101,7 @@ const Create = () => {
             />
           </div>
           <div className="formGroup">
-            <label>Name</label>
+            <label>Titre</label>
             <input
               type="text"
               placeholder="Item Name"
@@ -123,7 +123,7 @@ const Create = () => {
             ></textarea>
           </div>
           <div className="formGroup">
-            <label>Price</label>
+            <label>Prix</label>
             <div className="twoForm">
               <input
                 type="text"
@@ -134,29 +134,13 @@ const Create = () => {
               />
               <select>
                 <option value="ETH">ETH</option>
-                <option value="BTC">BTC</option>
-                <option value="LTC">LTC</option>
               </select>
             </div>
           </div>
-          <div className="formGroup">
-            <label>Category</label>
-            <select>
-              <option>Art</option>
-              <option>Photography</option>
-              <option>Sports</option>
-              <option>Collectibles</option>
-              <option>Trading Cards</option>
-              <option>Utility</option>
-            </select>
-          </div>
-          <div className="formGroup">
-            <label>Available Items</label>
-            <input type="text" placeholder="No of Items" />
-          </div>
-          <button>Create Item</button>
+
+          {/* <button>Create Item</button> */}
           <a onClick={createItem} className="btn btn-grad btn_create">
-            Create item
+            Créer
           </a>
         </form>
       </div>

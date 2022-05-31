@@ -56,14 +56,25 @@ const MyItems = () => {
   }
 
   if (loadingState === 'loaded' && !nfts.length)
-    return <h1>No assets owned , you can go to the home page and buy</h1>
+    return (
+      <div>
+        <div className="bids section__padding">
+          <div className="bids-container">
+            <div className="bids-container-text">
+              <h1>
+                Aucun NFT possédé, vous pouvez aller à la page d'accueil et
+                acheter
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   return (
     <div className="bids section__padding">
       <div className="bids-container">
         <div className="bids-container-text">
-          <h1>
-              My Items
-          </h1>
+          <h1>My Items</h1>
         </div>
         <div className="bids-container-card">
           <div className="row">
